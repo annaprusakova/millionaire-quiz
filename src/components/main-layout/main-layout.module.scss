@@ -1,0 +1,60 @@
+@use "@/styles/colors" as *;
+@use "@/styles/breakpoints" as *;
+
+.layout {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+  min-height: 100vh;
+  background-color: $white-100;
+}
+
+.background {
+  background: linear-gradient(to bottom right, $white-100 50%, $orange-5 50%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+
+.imageWrapper {
+  position: relative;
+  width: 288px;
+  height: 192px;
+  object-fit: cover;
+
+  @include tablet {
+    width: 600px;
+    height: 300px;
+  }
+  @include desktop {
+    width: 624px;
+    height: 367px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 120px;
+
+  @include tablet {
+    align-items: flex-start;
+    gap: 64px;
+    text-align: left;
+  }
+}

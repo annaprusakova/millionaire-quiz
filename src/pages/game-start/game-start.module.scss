@@ -1,0 +1,11 @@
+@use "@/styles/breakpoints" as *;
+
+.title {
+  font-weight: 600;
+  font-size: 32px;
+
+  @include desktop {
+    font-size: 56px;
+  }
+
+}
