@@ -1,0 +1,130 @@
+@use "@/styles/colors" as *;
+@use "@/styles/breakpoints" as *;
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  cursor: pointer;
+  color: $black-100;
+  background-color: transparent;
+
+  &:hover {
+    .line {
+      background-color: $orange-100;
+    }
+  }
+
+  &:active {
+    .line {
+      background-color: $orange-100;
+    }
+  }
+
+}
+
+.line {
+  height: 1px;
+  width: 17px;
+  background-color: $black-40;
+  transition: background-color 0.2s ease;
+
+
+  &.correct {
+    background-color: $green-100;
+  }
+
+  &.wrong {
+    background-color: $red-100;
+  }
+
+}
+
+.diamondShape {
+  padding: 25px 32px;
+  width: 288px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  border-width: 0;
+  border-style: solid;
+  border-color: $black-40;
+  cursor: pointer;
+  background: transparent;
+  transition: border-color 0.2s ease;
+
+  @include tablet {
+    width: 389px;
+  }
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    border-color: inherit;
+    border-style: inherit;
+    height: 50%;
+    width: 100%;
+    left: 0;
+    z-index: 10;
+    background: $white-100;
+    transition: background-color 0.2s ease;
+  }
+
+  &::before {
+    border-width: 1px 1px 0 1px;
+    top: 0;
+    transform-origin: center bottom;
+    transform: perspective(0.5rem) rotateX(2deg);
+  }
+
+  &::after {
+    border-width: 0 1px 1px 1px;
+    bottom: 0;
+    transform-origin: center top;
+    transform: perspective(0.5rem) rotateX(-2deg);
+  }
+
+  &:hover {
+    border-color: $orange-100;
+  }
+
+  &:active {
+    border-color: $orange-100;
+    &::before, &::after {
+      background-color: $orange-5;
+    }
+  }
+
+  &.correct {
+    border-color: $green-100;
+    &::before, &::after {
+      background-color: $green-5;
+    }
+  }
+
+  &.wrong {
+    border-color: $red-100;
+    &::before, &::after {
+      background-color: $red-5;
+    }
+  }
+
+}
+
+.textContainer {
+  z-index: 20;
+  position: relative;
+  text-align: left;
+  font-size: 14px;
+
+  @include tablet {
+    font-size: 20px;
+  }
+
+  .id {
+    font-weight: 600;
+    margin-right: 8px;
+    color: $orange-100;
+  }
+}
