@@ -1,0 +1,327 @@
+[
+  {
+    "id": 0,
+    "question": "In 'Shrek', what is the name of the dragon who guards Princess Fiona's tower?",
+    "answers": [
+      {
+        "id": "A0",
+        "option": "She is never named",
+        "isCorrect": true
+      },
+      {
+        "id": "B0",
+        "option": "Elizabeth",
+        "isCorrect": false
+      },
+      {
+        "id": "C0",
+        "option": "Ruby",
+        "isCorrect": false
+      },
+      {
+        "id": "D0",
+        "option": "Dragoness",
+        "isCorrect": false
+      }
+    ],
+    "reward": 500
+  },
+  {
+    "id": 1,
+    "question": "In '1984', what is the name of the totalitarian regime's leader?",
+    "answers": [
+      {
+        "id": "A1",
+        "option": "Big Brother",
+        "isCorrect": true
+      },
+      {
+        "id": "B1",
+        "option": "Emmanuel Goldstein",
+        "isCorrect": false
+      },
+      {
+        "id": "C1",
+        "option": "O'Brien",
+        "isCorrect": false
+      },
+      {
+        "id": "D1",
+        "option": "Winston Smith",
+        "isCorrect": false
+      }
+    ],
+    "reward": 1000
+  },
+  {
+      "id": 2,
+      "question": "What is the name of the serial killer in 'The Silence of the Lambs' whom Clarice Starling is trying to catch?",
+      "answers": [
+        {
+          "id": "A2",
+          "option": "Hannibal Lecter",
+          "isCorrect": false
+        },
+        {
+          "id": "B2",
+          "option": "Buffalo Bill",
+          "isCorrect": true
+        },
+        {
+          "id": "C2",
+          "option": "Jack Crawford",
+          "isCorrect": false
+        },
+        {
+          "id": "D2",
+          "option": "Multiple Miggs",
+          "isCorrect": false
+        }
+      ],
+      "reward": 2000
+    },
+  {
+    "id": 3,
+    "question": "In Ivan Bahriany's 'Сад Гетсиманський' ('Garden of Gethsemane'), what is the protagonist's name?",
+    "answers": [
+      {
+        "id": "A3",
+        "option": "Andriy Chumak",
+        "isCorrect": true
+      },
+      {
+        "id": "B3",
+        "option": "Pontius Pilatus",
+        "isCorrect": false
+      },
+      {
+        "id": "C3",
+        "option": "Petro Holovatyi",
+        "isCorrect": false
+      },
+      {
+        "id": "D3",
+        "option": "Mykola Khvyliovyi",
+        "isCorrect": false
+      }
+    ],
+    "reward": 4000
+  },
+    {
+      "id": 4,
+      "question": "In J.R.R. Tolkien's 'The Lord of the Rings', what is the name of Frodo Baggins' home?",
+      "answers": [
+        {
+          "id": "A4",
+          "option": "Bag End",
+          "isCorrect": true
+        },
+        {
+          "id": "B4",
+          "option": "Hobbiton Hall",
+          "isCorrect": false
+        },
+        {
+          "id": "C4",
+          "option": "Underhill",
+          "isCorrect": false
+        },
+        {
+          "id": "D4",
+          "option": "The Shire Manor",
+          "isCorrect": false
+        }
+      ],
+      "reward": 8000
+    },
+    {
+      "id": 5,
+      "question": "Who is the author of the Ukrainian novel 'Невеличка драма' (A Little Drama)?",
+      "answers": [
+        {
+          "id": "A5",
+          "option": "Ivan Franko",
+          "isCorrect": false
+        },
+        {
+          "id": "B5",
+          "option": "Lesya Ukrainka",
+          "isCorrect": false
+        },
+        {
+          "id": "C5",
+          "option": "Valerian Pidmohylny",
+          "isCorrect": true
+        },
+        {
+          "id": "D5",
+          "option": "Olha Kobylianska",
+          "isCorrect": false
+        }
+      ],
+      "reward": 16000
+    },
+
+    {
+      "id": 6,
+      "question": "In Jane Austen's 'Pride and Prejudice', what is the name of the estate owned by Mr. Darcy?",
+      "answers": [
+        {
+          "id": "A6",
+          "option": "Longbourn",
+          "isCorrect": false
+        },
+        {
+          "id": "B6",
+          "option": "Netherfield Park",
+          "isCorrect": false
+        },
+        {
+          "id": "C6",
+          "option": "Rosings Park",
+          "isCorrect": false
+        },
+        {
+          "id": "D6",
+          "option": "Pemberley",
+          "isCorrect": true
+        }
+      ],
+      "reward": 32000
+    },
+  {
+    "id": 7,
+    "question": "What famous quote does Robert De Niro's character repeat while looking in the mirror in 'Taxi Driver'?",
+    "answers": [
+      {
+        "id": "A7",
+        "option": "You talkin' to me?",
+        "isCorrect": true
+      },
+      {
+        "id": "B7",
+        "option": "I am the taxi driver.",
+        "isCorrect": false
+      },
+      {
+        "id": "C7",
+        "option": "This city needs cleaning.",
+        "isCorrect": false
+      },
+      {
+        "id": "D7",
+        "option": "I am the storm.",
+        "isCorrect": false
+      }
+    ],
+    "reward": 64000
+  },
+  {
+    "id": 8,
+    "question": "In 'Monty Python and the Holy Grail', what do the Knights of Ni demand as payment for passage through their forest?",
+    "answers": [
+      {
+        "id": "A8",
+        "option": "A gold coin",
+        "isCorrect": false
+      },
+      {
+        "id": "B8",
+        "option": "A shrubbery",
+        "isCorrect": true
+      },
+      {
+        "id": "C8",
+        "option": "A sacrifice",
+        "isCorrect": false
+      },
+      {
+        "id": "D8",
+        "option": "A holy relic",
+        "isCorrect": false
+      }
+    ],
+    "reward": 125000
+  },
+  {
+    "id": 9,
+    "question": "Who directed the 1994 film 'Pulp Fiction'?",
+    "answers": [
+      {
+        "id": "A9",
+        "option": "Martin Scorsese",
+        "isCorrect": false
+      },
+      {
+        "id": "B9",
+        "option": "Quentin Tarantino",
+        "isCorrect": true
+      },
+      {
+        "id": "C9",
+        "option": "Steven Spielberg",
+        "isCorrect": false
+      },
+      {
+        "id": "D9",
+        "option": "Francis Ford Coppola",
+        "isCorrect": false
+      }
+    ],
+    "reward": 250000
+  },
+  {
+    "id": 10,
+    "question": "What was the first feature-length animated movie ever released?",
+    "answers": [
+      {
+        "id": "A10",
+        "option": "Pinocchio",
+        "isCorrect": false
+      },
+      {
+        "id": "B10",
+        "option": "Steamboat Willie",
+        "isCorrect": false
+      },
+      {
+        "id": "C10",
+        "option": "Snow White and the Seven Dwarfs",
+        "isCorrect": true
+      },
+      {
+        "id": "D10",
+        "option": "Fantasia",
+        "isCorrect": false
+      }
+    ],
+    "reward": 500000
+  },
+  {
+    "id": 11,
+    "question": "Which film won the Academy Award for Best Picture in 1994?",
+    "answers": [
+      {
+        "id": "A11",
+        "option": "Pulp Fiction",
+        "isCorrect": false
+      },
+      {
+        "id": "B11",
+        "option": "The Shawshank Redemption",
+        "isCorrect": false
+      },
+      {
+        "id": "C11",
+        "option": "Forrest Gump",
+        "isCorrect": true
+      },
+      {
+        "id": "D11",
+        "option": "The Lion King",
+        "isCorrect": false
+      }
+    ],
+    "reward": 1000000
+  }
+]

@@ -1,7 +1,7 @@
 import { Answer } from '@/types/answer';
 
 export type Question = {
-  id: string;
+  id: number;
   question: string;
   answers: Answer[];
   reward: number;

@@ -1,4 +1,4 @@
-import QuizPage from '@/pages/quiz/quiz-page';
+import QuizPage from '@/appPages/quiz/quiz-page';
 
 export default function Quiz() {
   return <QuizPage />;

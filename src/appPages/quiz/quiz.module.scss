@@ -1,0 +1,63 @@
+@use "@/styles/colors" as *;
+@use "@/styles/breakpoints" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $black-5;
+  padding: 16px;
+
+  @include tablet {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .questionWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    @include tablet {
+      align-items: start;
+      padding: 110px 0 100px 40px;
+    }
+
+    @include desktop {
+      align-items: start;
+      padding: 133px 0 122px 80px;
+    }
+
+    .question {
+      @include tablet {
+        max-width: 624px;
+      }
+    }
+  }
+}
+
+.mobileMenuIcon {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.asideMenu {
+  display: none;
+  max-width: 376px;
+  width: 100%;
+  background-color: $white-100;
+
+  @include tablet {
+    display: flex;
+  }
+}

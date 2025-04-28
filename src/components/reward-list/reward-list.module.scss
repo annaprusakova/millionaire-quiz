@@ -1,0 +1,91 @@
+@use "@/styles/colors" as *;
+@use "@/styles/breakpoints" as *;
+
+.list {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.rewardContainer {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+
+  @include tablet {
+    font-size: 20px;
+  }
+}
+
+.reward {
+  padding: 8px 24px;
+  width: 240px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  border-width: 0;
+  border-style: solid;
+  border-color: $black-40;
+  background: transparent;
+  transition: border-color 0.2s ease;
+
+  span {
+    z-index: 20;
+    position: relative;
+  }
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    border-color: inherit;
+    border-style: inherit;
+    height: 50%;
+    width: 100%;
+    left: 0;
+    z-index: 10;
+    background: $white-100;
+    transition: background-color 0.2s ease;
+  }
+
+  &::before {
+    border-width: 1px 1px 0 1px;
+    top: 0;
+    transform-origin: center bottom;
+    transform: perspective(0.5rem) rotateX(2deg);
+  }
+
+  &::after {
+    border-width: 0 1px 1px 1px;
+    bottom: 0;
+    transform-origin: center top;
+    transform: perspective(0.5rem) rotateX(-2deg);
+  }
+
+  &.active {
+    border-color: $orange-100;
+    color: $orange-100;
+  }
+
+  &.passed {
+    color: $black-40;
+  }
+}
+
+.line {
+  height: 1px;
+  width: 41px;
+  background-color: $black-40;
+  transition: background-color 0.2s ease;
+
+  @include tablet {
+    width: 69px;
+  }
+
+  &.active {
+    background-color: $orange-100;
+  }
+}
