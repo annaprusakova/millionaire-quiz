@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Who Wants to Be a Millionaire?
+
+A fun and interactive quiz game. Built with **Next.js**, **React**, **TypeScript**, **SCSS**, and **Redux**.
+
+---
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [SCSS](https://sass-lang.com/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+
+---
+
+## Game Features
+
+- 12 questions
+- 4 choice answers
+- Money rewards
+- Responsive design
+
+---
+
+## Preview
+
+![Start Screen](./public/screenshots/desktop-start.png)
+![Question Screen](./public/screenshots/desktop-question.png)
+![Game Over Screen](./public/screenshots/desktop-game-over.png)
+
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Clone the repo
+
+```bash
+git clone https://github.com/annaprusakova/millionaire-quiz.git
+cd millionaire-quiz
+```
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run in development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build for production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
+## Project Structure
 
-## Learn More
+```bash
+/apps         → App logic and higher-level flow  
+/appPages     → Page-level components (Next.js routing)  
+/components   → Reusable UI components  
+/data         → Static question data and rewards  
+/store        → Redux store and slices  
+/styles       → SCSS styles
+/types        → TypeScript type definitions  
+/utils        → Helper and utility functions  
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
