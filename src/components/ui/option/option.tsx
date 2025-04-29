@@ -1,47 +1,50 @@
 'use client';
 
 import cn from 'classnames';
-import { useState } from 'react';
 import styles from './option.module.scss';
 
 type OptionsProps = {
   id: string;
   text: string;
   isCorrect: boolean;
-  onOptionClick: (id: string) => void;
+  isSelected: boolean;
+  disabled: boolean;
+  showAnswer: boolean;
+  onOptionClick: () => void;
 };
 
 export default function Option({
   id,
   text,
   isCorrect,
+  isSelected,
+  disabled,
+  showAnswer,
   onOptionClick,
 }: OptionsProps) {
-  const [isSelected, setSelected] = useState<boolean>(false);
-
-  const handleClick = () => {
-    setSelected(true);
-    onOptionClick(id);
-  };
+  const isPreSelected = isSelected && !showAnswer;
+  const isCorrectAnswer = isSelected && isCorrect && showAnswer;
+  const isWrongAnswer = isSelected && !isCorrect && showAnswer;
 
   return (
     <div className={styles.container}>
       <div
         className={cn(
           styles.line,
-          isSelected && isCorrect && styles.correct,
-          isSelected && !isCorrect && styles.wrong,
+          isCorrectAnswer && styles.correct,
+          isWrongAnswer && styles.wrong,
         )}
       />
 
       <button
         type="submit"
-        onClick={handleClick}
+        onClick={onOptionClick}
+        disabled={disabled}
         className={cn(
           styles.diamondShape,
-          isSelected && styles.selected,
-          isSelected && isCorrect && styles.correct,
-          isSelected && !isCorrect && styles.wrong,
+          isPreSelected && styles.selected,
+          isCorrectAnswer && styles.correct,
+          isWrongAnswer && styles.wrong,
         )}
       >
         <div className={styles.textContainer}>
@@ -53,8 +56,8 @@ export default function Option({
       <div
         className={cn(
           styles.line,
-          isSelected && isCorrect && styles.correct,
-          isSelected && !isCorrect && styles.wrong,
+          isCorrectAnswer && styles.correct,
+          isWrongAnswer && styles.wrong,
         )}
       />
     </div>

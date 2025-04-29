@@ -38,18 +38,22 @@
 
 .imageWrapper {
   position: relative;
-  width: 288px;
-  height: 192px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 288px;
 
   @include tablet {
-    width: 600px;
-    height: 300px;
+    max-width: 600px;
   }
+
   @include desktop {
-    width: 624px;
-    height: 367px;
+    max-width: 624px;
   }
+}
+
+.responsiveImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .info {

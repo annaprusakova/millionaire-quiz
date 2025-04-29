@@ -32,7 +32,15 @@ export default function MainLayout({ children }: MainLayoutProps) {
     <div className={cn(styles.layout, status !== 'ended' && styles.background)}>
       <div className={styles.container}>
         <div className={styles.imageWrapper}>
-          <Image src={HandImg} alt="Hand image" fill priority />
+          <Image
+            src={HandImg}
+            alt="Hand image"
+            priority
+            className={styles.responsiveImage}
+            width={624}
+            height={367}
+            sizes="(max-width: 767px) 288px, (max-width: 1023px) 600px, 624px"
+          />
         </div>
         <div className={styles.info}>
           {children}
