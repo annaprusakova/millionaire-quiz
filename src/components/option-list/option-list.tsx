@@ -3,6 +3,7 @@ import Option from '@/components/ui/option/option';
 import { answerQuestion } from '@/store/quiz-slice';
 import { useAppDispatch, useAppSelector } from '@/store/store';
 import { useEffect, useState } from 'react';
+import { useSound } from '@/hooks/use-sound';
 import styles from './option-list.module.scss';
 
 type OptionListProps = {
@@ -12,6 +13,8 @@ type OptionListProps = {
 export default function OptionList({ answers }: OptionListProps) {
   const dispatch = useAppDispatch();
   const { currentQuestionIndex } = useAppSelector((state) => state.quiz);
+  const correctSound = useSound('/sounds/correct.mp3');
+  const wrongSound = useSound('/sounds/wrong.mp3');
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -21,6 +24,15 @@ export default function OptionList({ answers }: OptionListProps) {
     setShowAnswer(false);
   }, [currentQuestionIndex]);
 
+  const handleSound = (answerId: string) => {
+    const isCorrect = answers.find((elem) => elem.id === answerId)?.isCorrect;
+    if (isCorrect) {
+      correctSound.play();
+    } else {
+      wrongSound.play();
+    }
+  };
+
   const handleAnswer = (answerId: string) => {
     if (selectedId !== null) return;
 
@@ -28,6 +40,7 @@ export default function OptionList({ answers }: OptionListProps) {
 
     setTimeout(() => {
       setShowAnswer(true);
+      handleSound(answerId);
 
       setTimeout(() => {
         dispatch(answerQuestion({ answerId }));

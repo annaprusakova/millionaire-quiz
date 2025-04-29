@@ -67,6 +67,7 @@ npm start
 /appPages     → Page-level components (Next.js routing)  
 /components   → Reusable UI components  
 /data         → Static question data and rewards  
+/hooks        → Quiz hooks
 /store        → Redux store and slices  
 /styles       → SCSS styles
 /types        → TypeScript type definitions  

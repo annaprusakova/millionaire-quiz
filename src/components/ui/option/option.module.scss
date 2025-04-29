@@ -2,6 +2,7 @@
 @use "@/styles/breakpoints" as *;
 
 .container {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 0;
@@ -25,10 +26,13 @@
 
 .line {
   height: 1px;
-  width: 17px;
+  width: 100%;
   background-color: $black-40;
   transition: background-color 0.2s ease;
 
+  @include tablet {
+    width: 17px;
+  }
 
   &.correct {
       background-color: $green-100;
@@ -47,6 +51,7 @@
   text-align: center;
   vertical-align: middle;
   display: inline-block;
+  flex-shrink: 0;
   border-width: 0;
   border-style: solid;
   border-color: $black-40;
