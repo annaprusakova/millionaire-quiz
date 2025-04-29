@@ -10,7 +10,7 @@ type OptionsProps = {
   isSelected: boolean;
   disabled: boolean;
   showAnswer: boolean;
-  onOptionClick: () => void;
+  onOptionClickAction: () => void;
 };
 
 export default function Option({
@@ -20,7 +20,7 @@ export default function Option({
   isSelected,
   disabled,
   showAnswer,
-  onOptionClick,
+  onOptionClickAction,
 }: OptionsProps) {
   const isPreSelected = isSelected && !showAnswer;
   const isCorrectAnswer = isSelected && isCorrect && showAnswer;
@@ -38,7 +38,7 @@ export default function Option({
 
       <button
         type="submit"
-        onClick={onOptionClick}
+        onClick={onOptionClickAction}
         disabled={disabled}
         className={cn(
           styles.diamondShape,

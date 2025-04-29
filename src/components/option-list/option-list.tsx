@@ -59,7 +59,7 @@ export default function OptionList({ answers }: OptionListProps) {
           isSelected={selectedId === answer.id}
           disabled={selectedId !== null}
           showAnswer={showAnswer}
-          onOptionClick={() => handleAnswer(answer.id)}
+          onOptionClickAction={() => handleAnswer(answer.id)}
         />
       ))}
     </div>
