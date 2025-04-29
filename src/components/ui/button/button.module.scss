@@ -2,27 +2,15 @@
 @use "@/styles/breakpoints" as *;
 
 .button {
-  min-width: 288px;
-  max-width: 296px;
   width: 100%;
-  background-color: $orange-100;
   color: $white-100;
   border: none;
   border-radius: 8px;
-  padding: 16px 12px;
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-align: center;
   font-weight: 600;
-
-  &:hover {
-    background-color: $orange-80;
-  }
-
-  &:active {
-    background-color: $orange-120;
-  }
 
   @include tablet {
     font-size: 18px;

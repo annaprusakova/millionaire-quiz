@@ -39,6 +39,7 @@ export default function Option({
         onClick={handleClick}
         className={cn(
           styles.diamondShape,
+          isSelected && styles.selected,
           isSelected && isCorrect && styles.correct,
           isSelected && !isCorrect && styles.wrong,
         )}

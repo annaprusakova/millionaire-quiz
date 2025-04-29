@@ -10,13 +10,13 @@
   background-color: transparent;
 
   &:hover {
-    .line {
+    .line:not(.correct):not(.wrong) {
       background-color: $orange-100;
     }
   }
 
   &:active {
-    .line {
+    .line:not(.correct):not(.wrong) {
       background-color: $orange-100;
     }
   }
@@ -31,11 +31,11 @@
 
 
   &.correct {
-    background-color: $green-100;
+      background-color: $green-100;
   }
 
   &.wrong {
-    background-color: $red-100;
+      background-color: $red-100;
   }
 
 }
@@ -89,7 +89,7 @@
     border-color: $orange-100;
   }
 
-  &:active {
+  &:active, &.selected {
     border-color: $orange-100;
     &::before, &::after {
       background-color: $orange-5;

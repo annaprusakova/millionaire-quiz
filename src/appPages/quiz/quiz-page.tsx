@@ -7,12 +7,18 @@ import { loadQuestions } from '@/store/quiz-slice';
 import questionsData from '@/data/questions.json';
 import RewardList from '@/components/reward-list/reward-list';
 import { useRouter } from 'next/navigation';
+import Button from '@/components/ui/button/button';
+import Image from 'next/image';
+import cn from 'classnames';
 import styles from './quiz.module.scss';
+import CloseIcon from '../../../public/close.svg';
+import MenuIcon from '../../../public/menu.svg';
 
 export default function QuizPage() {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isClosing, setIsClosing] = useState<boolean>(false);
   const { questions, currentQuestionIndex, status } = useAppSelector(
     (state) => state.quiz,
   );
@@ -40,15 +46,28 @@ export default function QuizPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
 
+  const toggleMenu = () => {
+    if (isMenuOpen) {
+      setIsClosing(true);
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        setIsClosing(false);
+      }, 300);
+    } else {
+      setIsMenuOpen(true);
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <button
-        type="button"
-        onClick={() => setIsMenuOpen((prev) => !prev)}
-        className={styles.mobileMenuIcon}
-      >
-        {isMenuOpen ? 'x' : '|||'}
-      </button>
+      <div className={styles.iconWrapper}>
+        <Button onClick={toggleMenu} className={styles.mobileMenuIcon}>
+          <Image
+            src={isMenuOpen ? CloseIcon : MenuIcon}
+            alt={isMenuOpen ? 'Close icon' : 'Open menu icon'}
+          />
+        </Button>
+      </div>
 
       {questions.length > 0 && (
         <div className={styles.questionWrapper}>
@@ -65,6 +84,17 @@ export default function QuizPage() {
           currentQuestionId={currentQuestionIndex}
         />
       </aside>
+
+      {isMenuOpen && (
+        <div className={cn(styles.mobileMenu, isClosing && styles.closing)}>
+          <div className={styles.mobileWrapper}>
+            <RewardList
+              rewardList={questionsRewards || []}
+              currentQuestionId={currentQuestionIndex}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

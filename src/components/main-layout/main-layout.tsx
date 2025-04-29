@@ -36,7 +36,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
         </div>
         <div className={styles.info}>
           {children}
-          <Button onClick={handleStartGame}>
+          <Button onClick={handleStartGame} className={styles.button}>
             {status !== 'ended' ? 'Start' : 'Try again'}
           </Button>
         </div>

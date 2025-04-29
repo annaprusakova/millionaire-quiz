@@ -19,6 +19,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding: 96px 0 8px 0;
 
     @include tablet {
       align-items: start;
@@ -31,23 +32,36 @@
     }
 
     .question {
+      text-align: center;
+      font-size: 18px;
+
       @include tablet {
+        font-size: 24px;
+        text-align: start;
         max-width: 624px;
+      }
+
+      @include desktop {
+        font-size: 32px;
       }
     }
   }
 }
 
-.mobileMenuIcon {
+.iconWrapper {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: end;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
 
   @include tablet {
     display: none;
+  }
+
+  .mobileMenuIcon {
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -61,3 +75,51 @@
     display: flex;
   }
 }
+
+.mobileMenu {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $black-5;
+  z-index: 20;
+  animation: slideIn 0.3s ease-in-out;
+  overflow-y: auto;
+
+  @include tablet {
+    display: none;
+  }
+
+  &.closing {
+    animation: slideOut 0.3s ease-in-out forwards;
+  }
+}
+
+.mobileWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+

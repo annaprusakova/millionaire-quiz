@@ -1,12 +1,13 @@
+import cn from 'classnames';
 import styles from './button.module.scss';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-export default function Button({ children, ...props }: ButtonProps) {
+export default function Button({ children, className, ...props }: ButtonProps) {
   return (
-    <button className={styles.button} {...props} type="button">
+    <button className={cn(styles.button, className)} {...props} type="button">
       {children}
     </button>
   );

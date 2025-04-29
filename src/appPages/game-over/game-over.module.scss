@@ -1,0 +1,29 @@
+@use "@/styles/breakpoints" as *;
+@use "@/styles/colors" as *;
+
+.finishWrapper {
+  text-align: center;
+
+  @include tablet {
+    text-align: start;
+  }
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 50%;
+
+  @include desktop {
+    font-size: 32px;
+  }
+}
+
+.score {
+  font-weight: 600;
+  font-size: 32px;
+
+  @include desktop {
+    font-size: 56px;
+  }
+}

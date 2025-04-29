@@ -2,14 +2,20 @@
 @use "@/styles/breakpoints" as *;
 
 .list {
+  width: 100%;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   gap: 8px;
+
+  @include tablet {
+    padding-top: 17px;
+  }
 }
 
 .rewardContainer {
+  width: 100%;
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -23,6 +29,7 @@
 .reward {
   padding: 8px 24px;
   width: 240px;
+  flex-shrink: 0;
   position: relative;
   text-align: center;
   vertical-align: middle;
@@ -77,7 +84,7 @@
 
 .line {
   height: 1px;
-  width: 41px;
+  width: 100%;
   background-color: $black-40;
   transition: background-color 0.2s ease;
 
