@@ -4,11 +4,13 @@ import './globals.css';
 import { Providers } from '@/app/providers';
 
 const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
 });
+
 export const metadata: Metadata = {
   title: 'Who wants to be a millionaire?',
-  description: 'Try the game!',
+  description: 'Try the quiz!',
 };
 
 export default function RootLayout({

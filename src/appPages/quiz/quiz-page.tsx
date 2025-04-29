@@ -11,8 +11,8 @@ import Button from '@/components/ui/button/button';
 import Image from 'next/image';
 import cn from 'classnames';
 import styles from './quiz.module.scss';
-import CloseIcon from '../../../public/close.svg';
-import MenuIcon from '../../../public/menu.svg';
+import CloseIcon from '../../../public/icons/close.svg';
+import MenuIcon from '../../../public/icons/menu.svg';
 
 export default function QuizPage() {
   const dispatch = useAppDispatch();
