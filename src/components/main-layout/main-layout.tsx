@@ -1,8 +1,9 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import cn from 'classnames';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 import Button from '@/components/ui/button/button';
 import { useAppDispatch, useAppSelector } from '@/store/store';
@@ -18,7 +19,15 @@ type MainLayoutProps = {
 export default function MainLayout({ children }: MainLayoutProps) {
   const dispatch = useAppDispatch();
   const router = useRouter();
+  const pathname = usePathname();
   const { status } = useAppSelector((state) => state.quiz);
+
+  useEffect(() => {
+    if (status === 'playing' && pathname === '/game-over') {
+      router.push('/');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status, pathname]);
 
   const handleStartGame = () => {
     if (status === 'ended') {

@@ -7,7 +7,6 @@ import styles from './game-over.module.scss';
 
 export default function GameOverPage() {
   const { earnedReward } = useAppSelector((state) => state.quiz);
-
   return (
     <MainLayout>
       <div className={styles.finishWrapper}>

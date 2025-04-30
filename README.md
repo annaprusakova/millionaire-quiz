@@ -4,7 +4,7 @@ A fun and interactive quiz game. Built with **Next.js**, **React**, **TypeScript
 
 ## Demo
 
-[Demi link](https://millionaire-quiz-hazel.vercel.app/)
+[Demo link](https://millionaire-quiz-hazel.vercel.app/)
 
 ## Tech Stack
 
