@@ -65,12 +65,12 @@
 
   @include tablet {
     gap: 48px;
+    align-items: flex-start;
+    text-align: left;
   }
 
-  @include tablet {
-    align-items: flex-start;
+  @include desktop {
     gap: 64px;
-    text-align: left;
   }
 }
 

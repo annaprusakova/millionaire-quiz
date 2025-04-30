@@ -22,6 +22,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
   const pathname = usePathname();
   const { status } = useAppSelector((state) => state.quiz);
 
+  const isGameEnded = status === 'ended';
+  const buttonText = isGameEnded ? 'Try again' : 'Start';
+
   useEffect(() => {
     if (status === 'playing' && pathname === '/game-over') {
       router.push('/');
@@ -39,7 +42,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
   };
 
   return (
-    <div className={cn(styles.layout, status !== 'ended' && styles.background)}>
+    <div className={cn(styles.layout, !isGameEnded && styles.background)}>
       <div className={styles.container}>
         <div className={styles.imageWrapper}>
           <Image
@@ -55,7 +58,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
         <div className={styles.info}>
           {children}
           <Button onClick={handleStartGame} className={styles.button}>
-            {status !== 'ended' ? 'Start' : 'Try again'}
+            {buttonText}
           </Button>
         </div>
       </div>

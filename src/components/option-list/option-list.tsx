@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { Answer } from '@/types';
 import Option from '@/components/ui/option/option';
@@ -10,6 +10,9 @@ import styles from './option-list.module.scss';
 type OptionListProps = {
   answers: Answer[];
 };
+
+const SHOW_ANSWER_DELAY = 500;
+const NEXT_QUESTION_DELAY = 1000;
 
 export default function OptionList({ answers }: OptionListProps) {
   const dispatch = useAppDispatch();
@@ -25,29 +28,39 @@ export default function OptionList({ answers }: OptionListProps) {
     setShowAnswer(false);
   }, [currentQuestionIndex]);
 
-  const handleSound = (answerId: string) => {
-    const isCorrect = answers.find((elem) => elem.id === answerId)?.isCorrect;
-    if (isCorrect) {
-      correctSound.play();
-    } else {
-      wrongSound.play();
-    }
-  };
+  const playFeedbackSound = useCallback(
+    (answerId: string) => {
+      const isCorrect = answers.find(
+        (answer) => answer.id === answerId,
+      )?.isCorrect;
 
-  const handleAnswer = (answerId: string) => {
-    if (selectedId !== null) return;
+      if (isCorrect) {
+        correctSound.play();
+      } else {
+        wrongSound.play();
+      }
+    },
+    [answers, correctSound, wrongSound],
+  );
 
-    setSelectedId(answerId);
+  const handleAnswer = useCallback(
+    (answerId: string) => {
+      if (selectedId !== null) return;
 
-    setTimeout(() => {
-      setShowAnswer(true);
-      handleSound(answerId);
+      setSelectedId(answerId);
 
       setTimeout(() => {
-        dispatch(answerQuestion({ answerId }));
-      }, 1000);
-    }, 500);
-  };
+        setShowAnswer(true);
+        playFeedbackSound(answerId);
+
+        setTimeout(() => {
+          dispatch(answerQuestion({ answerId }));
+        }, NEXT_QUESTION_DELAY);
+      }, SHOW_ANSWER_DELAY);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [selectedId, playFeedbackSound],
+  );
 
   return (
     <div className={styles.container}>

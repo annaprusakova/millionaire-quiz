@@ -1,49 +1,53 @@
 @use "@/styles/colors" as *;
 @use "@/styles/breakpoints" as *;
 
+$mobile-menu-animation-duration: 0.3s;
+$desktop-padding-horizontal: 80px;
+$tablet-padding-horizontal: 40px;
+$mobile-padding: 16px;
+
 .container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: $black-5;
-  padding: 16px;
+  padding: $mobile-padding;
 
   @include tablet {
     flex-direction: row;
     padding: 0;
   }
+}
 
-  .questionWrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 96px 0 8px 0;
+.questionWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 96px 0 8px 0;
+
+  @include tablet {
+    align-items: start;
+    padding: 110px 0 100px $tablet-padding-horizontal;
+  }
+
+  @include desktop {
+    padding: 133px 0 122px $desktop-padding-horizontal;
+  }
+
+  .question {
+    text-align: center;
+    font-size: 18px;
 
     @include tablet {
-      align-items: start;
-      padding: 110px 0 100px 40px;
+      font-size: 24px;
+      text-align: start;
+      max-width: 624px;
     }
 
     @include desktop {
-      align-items: start;
-      padding: 133px 0 122px 80px;
-    }
-
-    .question {
-      text-align: center;
-      font-size: 18px;
-
-      @include tablet {
-        font-size: 24px;
-        text-align: start;
-        max-width: 624px;
-      }
-
-      @include desktop {
-        font-size: 32px;
-      }
+      font-size: 32px;
     }
   }
 }
@@ -84,7 +88,7 @@
   width: 100%;
   background-color: $black-5;
   z-index: 20;
-  animation: slideIn 0.3s ease-in-out;
+  animation: slideIn $mobile-menu-animation-duration ease-in-out;
   overflow-y: auto;
 
   @include tablet {
@@ -92,7 +96,7 @@
   }
 
   &.closing {
-    animation: slideOut 0.3s ease-in-out forwards;
+    animation: slideOut $mobile-menu-animation-duration ease-in-out forwards;
   }
 }
 
@@ -122,4 +126,3 @@
     transform: translateX(100%);
   }
 }
-

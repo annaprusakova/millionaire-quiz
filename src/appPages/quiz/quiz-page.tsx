@@ -15,23 +15,32 @@ import styles from './quiz.module.scss';
 import CloseIcon from '../../../public/icons/close.svg';
 import MenuIcon from '../../../public/icons/menu.svg';
 
+const MENU_ANIMATION_DURATION = 300;
+
 export default function QuizPage() {
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isClosing, setIsClosing] = useState<boolean>(false);
+  const [menuState, setMenuState] = useState({
+    isOpen: false,
+    isClosing: false,
+  });
+
   const { questions, currentQuestionIndex, status } = useAppSelector(
     (state) => state.quiz,
   );
 
   const questionsRewards = useMemo(
     () =>
-      questions.length > 0 &&
-      questions.map((question) => {
-        return { reward: question.reward, id: question.id };
-      }),
+      questions.length > 0
+        ? questions.map((question) => ({
+            reward: question.reward,
+            id: question.id,
+          }))
+        : [],
     [questions],
   );
+
+  const currentQuestion = questions[currentQuestionIndex];
 
   useEffect(() => {
     if (questions.length === 0) {
@@ -48,14 +57,13 @@ export default function QuizPage() {
   }, [status]);
 
   const toggleMenu = () => {
-    if (isMenuOpen) {
-      setIsClosing(true);
+    if (menuState.isOpen) {
+      setMenuState({ isOpen: true, isClosing: true });
       setTimeout(() => {
-        setIsMenuOpen(false);
-        setIsClosing(false);
-      }, 300);
+        setMenuState({ isOpen: false, isClosing: false });
+      }, MENU_ANIMATION_DURATION);
     } else {
-      setIsMenuOpen(true);
+      setMenuState({ isOpen: true, isClosing: false });
     }
   };
 
@@ -64,18 +72,16 @@ export default function QuizPage() {
       <div className={styles.iconWrapper}>
         <Button onClick={toggleMenu} className={styles.mobileMenuIcon}>
           <Image
-            src={isMenuOpen ? CloseIcon : MenuIcon}
-            alt={isMenuOpen ? 'Close icon' : 'Open menu icon'}
+            src={menuState.isOpen ? CloseIcon : MenuIcon}
+            alt={menuState.isOpen ? 'Close icon' : 'Open menu icon'}
           />
         </Button>
       </div>
 
       {questions.length > 0 && (
         <div className={styles.questionWrapper}>
-          <h2 className={styles.question}>
-            {questions[currentQuestionIndex].question}
-          </h2>
-          <OptionList answers={questions[currentQuestionIndex].answers} />
+          <h2 className={styles.question}>{currentQuestion.question}</h2>
+          <OptionList answers={currentQuestion.answers} />
         </div>
       )}
 
@@ -86,8 +92,13 @@ export default function QuizPage() {
         />
       </aside>
 
-      {isMenuOpen && (
-        <div className={cn(styles.mobileMenu, isClosing && styles.closing)}>
+      {menuState.isOpen && (
+        <div
+          className={cn(
+            styles.mobileMenu,
+            menuState.isClosing && styles.closing,
+          )}
+        >
           <div className={styles.mobileWrapper}>
             <RewardList
               rewardList={questionsRewards || []}
