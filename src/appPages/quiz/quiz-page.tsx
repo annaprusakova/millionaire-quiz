@@ -1,15 +1,16 @@
 'use client';
 
+import { useEffect, useMemo, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import cn from 'classnames';
+
 import OptionList from '@/components/option-list/option-list';
 import { useAppDispatch, useAppSelector } from '@/store/store';
-import { useEffect, useMemo, useState } from 'react';
 import { loadQuestions } from '@/store/quiz-slice';
 import questionsData from '@/data/questions.json';
 import RewardList from '@/components/reward-list/reward-list';
-import { useRouter } from 'next/navigation';
 import Button from '@/components/ui/button/button';
-import Image from 'next/image';
-import cn from 'classnames';
 import styles from './quiz.module.scss';
 import CloseIcon from '../../../public/icons/close.svg';
 import MenuIcon from '../../../public/icons/menu.svg';

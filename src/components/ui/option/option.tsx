@@ -1,6 +1,7 @@
 'use client';
 
 import cn from 'classnames';
+
 import styles from './option.module.scss';
 
 type OptionsProps = {

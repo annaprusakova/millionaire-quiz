@@ -22,6 +22,10 @@
     }
   }
 
+  @include tablet {
+    width: fit-content;
+  }
+
 }
 
 .line {

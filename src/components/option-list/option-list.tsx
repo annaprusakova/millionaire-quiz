@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react';
+
 import { Answer } from '@/types';
 import Option from '@/components/ui/option/option';
 import { answerQuestion } from '@/store/quiz-slice';
 import { useAppDispatch, useAppSelector } from '@/store/store';
-import { useEffect, useState } from 'react';
 import { useSound } from '@/hooks/use-sound';
 import styles from './option-list.module.scss';
 

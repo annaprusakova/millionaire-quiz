@@ -2,8 +2,9 @@
 
 import { useRouter } from 'next/navigation';
 import cn from 'classnames';
-import Button from '@/components/ui/button/button';
 import Image from 'next/image';
+
+import Button from '@/components/ui/button/button';
 import { useAppDispatch, useAppSelector } from '@/store/store';
 import { loadQuestions, restartQuiz } from '@/store/quiz-slice';
 import questionsData from '@/data/questions.json';

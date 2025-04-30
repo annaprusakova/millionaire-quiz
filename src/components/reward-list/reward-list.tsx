@@ -1,5 +1,6 @@
-import { formatReward } from '@/utils/format-reward';
 import cn from 'classnames';
+
+import { formatReward } from '@/utils/format-reward';
 import styles from './reward-list.module.scss';
 
 type RewardListProps = {
