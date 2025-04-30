@@ -2,7 +2,9 @@
 
 A fun and interactive quiz game. Built with **Next.js**, **React**, **TypeScript**, **SCSS**, and **Redux**.
 
----
+## Demo
+
+[Demi link](https://millionaire-quiz-hazel.vercel.app/)
 
 ## Tech Stack
 
@@ -12,7 +14,6 @@ A fun and interactive quiz game. Built with **Next.js**, **React**, **TypeScript
 - [SCSS](https://sass-lang.com/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 
----
 
 ## Game Features
 
@@ -21,7 +22,6 @@ A fun and interactive quiz game. Built with **Next.js**, **React**, **TypeScript
 - Money rewards
 - Responsive design
 
----
 
 ## Preview
 
@@ -29,8 +29,6 @@ A fun and interactive quiz game. Built with **Next.js**, **React**, **TypeScript
 ![Question Screen](./public/screenshots/desktop-question.png)
 ![Game Over Screen](./public/screenshots/desktop-game-over.png)
 
-
----
 
 ## Getting Started
 
@@ -59,7 +57,6 @@ npm run build
 npm start
 ```
 
----
 ## Project Structure
 
 ```bash
